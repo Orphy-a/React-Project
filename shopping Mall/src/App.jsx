@@ -1,11 +1,11 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
+import { RouterProvider } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import { router } from "./routers/routers";
 
 function App() {
   return (
     <>
-      <Header />
-      <Main />
+      <RouterProvider router={router} />
     </>
   );
 }
