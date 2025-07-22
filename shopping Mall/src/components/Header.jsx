@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/header.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,14 +8,14 @@ const Header = () => {
       <div className="header-container">
         <div className="header">
           <div className="header-logo">
-            <a href="#">로고</a>
+            <Link to="/">로고</Link>
           </div>
           <div className="header-nav">
             <li>
-              <a href="#">메뉴1</a>
+              <Link to="/detail">메뉴1</Link>
             </li>
             <li>
-              <a href="#">메뉴2</a>
+              <Link to="/detail">메뉴1</Link>
             </li>
           </div>
         </div>
