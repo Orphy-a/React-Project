@@ -42,3 +42,14 @@
   cursor: pointer;
   margin-top: auto;
 }
+
+.alert {
+  width: 1200px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: beige;
+  border: 1px solid rgb(209, 209, 189);
+  border-radius: 5px;
+  margin: 0 auto;
+}
