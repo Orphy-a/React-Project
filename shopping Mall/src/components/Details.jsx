@@ -24,6 +24,9 @@ const Details = () => {
 
   const [alert, setAlert] = useState(true);
 
+  const [active, setActive] = useState(0);
+  const tabs = ["탭1", "탭2", "탭3"];
+
   return (
     <>
       <div className="detail-product-container">
@@ -36,9 +39,34 @@ const Details = () => {
           <button className="detail-product-order-btn">주문하기</button>
         </div>
       </div>
-      {alert == true ? <div className="alert">useEffect, setTimeout 연습</div> : null}
+      <div className="tab-container">
+        {tabs.map((tab, idx) => (
+          <button key={idx} className={active === idx ? "tab-btn active" : "tab-btn"} onClick={() => setActive(idx)}>
+            {tab}
+          </button>
+        ))}
+      </div>
+      <div className="tab-content-container">
+        <TabContent />
+      </div>
     </>
   );
+
+  function TabContent() {
+    const [fadeIn, setFadeIn] = useState(false);
+
+    useEffect(() => {
+      setFadeIn(true);
+    }, [active]);
+
+    if (active === 0) {
+      return <div className={`tab-content ${fadeIn ? "fade-in" : ""}`}>내용1</div>;
+    } else if (active === 1) {
+      return <div className={`tab-content ${fadeIn ? "fade-in" : ""}`}>내용2</div>;
+    } else {
+      return <div className={`tab-content ${fadeIn ? "fade-in" : ""}`}>내용3</div>;
+    }
+  }
 };
 
 export default Details;
