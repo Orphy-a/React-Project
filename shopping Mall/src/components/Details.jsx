@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import data from "../data/data.jsx";
 import { useParams } from "react-router-dom";
 import "../styles/detail.css";
+import usestore from "../store/usestore";
 
 const Details = () => {
   //파라미터 받아옴
@@ -11,7 +12,7 @@ const Details = () => {
   const productId = Number(id);
 
   // 데이터에서 숫자로 변환한 id로 물건 정보 찾기
-  const product = data.find((item) => item.id === productId);
+  const product = usestore((state) => state.products.find((item) => item.id === productId));
 
   // 생명주기 mount - update - unmount
   // mount, update시 코드 실행됨
@@ -23,9 +24,11 @@ const Details = () => {
   }, []);
 
   const [alert, setAlert] = useState(true);
-
   const [active, setActive] = useState(0);
   const tabs = ["탭1", "탭2", "탭3"];
+
+  // 장바구니 추가
+  const addCart = usestore((state) => state.addCart);
 
   return (
     <>
@@ -35,7 +38,7 @@ const Details = () => {
           <div>{product.title}</div>
           <div>{product.content}</div>
           <div>{product.price.toLocaleString()} 원</div>
-
+          <button onClick={() => addCart(product)}>장바구니</button>
           <button className="detail-product-order-btn">주문하기</button>
         </div>
       </div>

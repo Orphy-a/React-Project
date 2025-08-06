@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/header.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
           </div>
           <div className="header-nav">
             <li>
-              <Link to="/detail">메뉴1</Link>
+              <Link to="/cart">장바구니</Link>
             </li>
             <li>
               <Link to="/detail">메뉴1</Link>
