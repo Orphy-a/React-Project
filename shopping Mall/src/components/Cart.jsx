@@ -41,11 +41,19 @@ const Cart = () => {
                   <td>{product.price.toLocaleString()}원</td>
 
                   <td>
-                    <button className="cart-amount-btn" onClick={() => setCount(count - 1)}>
+                    <button className="cart-amount-btn" onClick={() => setCount((prev) => Math.max(prev - 1, 1))}>
                       -
                     </button>
-                    <input type="number" value={count} className="cart-amount-input" onChange={(e) => setCount(e.target.value)} />
-                    <button className="cart-amount-btn" onClick={() => setCount(count + 1)}>
+                    <input
+                      type="number"
+                      value={count}
+                      className="cart-amount-input"
+                      onChange={(e) => {
+                        const val = Number(e.target.value);
+                        if (val >= 1) setCount(val);
+                      }}
+                    />
+                    <button className="cart-amount-btn" onClick={() => setCount((prev) => prev + 1)}>
                       +
                     </button>
                   </td>
