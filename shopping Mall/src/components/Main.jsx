@@ -15,7 +15,7 @@ const Main = () => {
             <div className="main-product" key={shoes.id}>
               <img className="main-product-img" onClick={() => navigate(`/detail/${shoes.id}`)} style={{ cursor: "pointer" }} src={`https://codingapple1.github.io/shop/shoes${shoes.id}.jpg`} alt={shoes.title} />
               <div>{shoes.title}</div>
-              <div>{shoes.price}</div>
+              <div>{shoes.price.toLocaleString()}원</div>
             </div>
           ))}
         </div>

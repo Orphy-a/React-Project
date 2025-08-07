@@ -7,74 +7,153 @@
 .cart-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.cart-table th,
-.cart-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: 2px solid black;
 }
 
 .cart-table th {
-  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  background-color: #f8f9fa;
   font-weight: bold;
 }
 
-/* 수량 조절 버튼 */
-.cart-amount-btn {
-  padding: 5px 10px;
-  margin: 0 5px;
-  background-color: #eeeeee;
+.cart-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.cart-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.delete-btn {
+  width: 100px;
+  background-color: #dc3545;
+  color: white;
   border: none;
+  padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  transition: background-color 0.2s;
 }
 
-.cart-amount-btn:hover {
-  background-color: #ddd;
+.delete-btn:hover {
+  background-color: #c82333;
 }
 
-/* 주문하기 및 삭제 버튼 */
-
-.cart-table button {
-  padding: 6px 10px;
-  margin: 2px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* 장바구니가 비었을 때 */
 .cart-empty {
   text-align: center;
-  padding: 100px 20px;
-  color: #777;
-  font-size: 18px;
-}
-
-.cart-table th:nth-child(5) {
-  width: 150px;
-}
-
-.cart-table th:nth-child(6) {
-  width: 130px;
-}
-
-.cart-table th:nth-child(7) {
-  width: 150px;
+  padding: 50px;
+  color: #666;
 }
 
 .cart-amount-input {
-  width: 50px;
-  margin: 0 auto;
+  width: 40px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.order-btn {
+  width: 100px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.order-btn:hover {
+  background-color: #0056b3;
+}
+
+.cart-amount-btn {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.cart-btn-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-table td:nth-child(1) {
+  width: 50px;
+}
+
+.cart-table td:nth-child(2) {
+  width: 200px;
+  height: 200px;
+}
+
+.cart-table td:nth-child(3) {
+  width: 100px;
+}
+
+.cart-table td:nth-child(4) {
+  width: 100px;
+}
+
+.cart-table td:nth-child(5) {
+  width: 150px;
+}
+
+.cart-table td:nth-child(6) {
+  width: 100px;
+}
+
+.cart-table td:nth-child(7) {
+  width: 100px;
+}
+
+.cart-table td:nth-child(8) {
+  width: 100px;
+}
+
+.cart-title {
+  font-size: 25px;
+  border-bottom: 3px solid #000;
+  margin-bottom: 30px;
+}
+
+.cart-subtitle {
+  font-size: 16px;
+}
+
+.cart-table th,
+.cart-table td {
+  border: none;
+}
+
+.cart-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.cart-total {
+  text-align: right;
 }

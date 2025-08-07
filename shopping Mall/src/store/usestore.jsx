@@ -40,10 +40,13 @@ const useStore = create(
       setCart: (cart) => set({ cart }),
       addCart: (newItem) => {
         const { cart } = get();
+
         const exists = cart.some((item) => item.id === newItem.id);
         if (exists) {
           alert("이미 장바구니에 담긴 상품입니다.");
           return;
+        } else {
+          alert("장바구니에 상품을 담았습니다.");
         }
         set({ cart: [...cart, newItem] });
       },
