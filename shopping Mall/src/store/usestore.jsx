@@ -1,4 +1,3 @@
-import React from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -62,4 +61,22 @@ const useStore = create(
   )
 );
 
-export default useStore;
+const useRecentProductStore = create(
+  persist(
+    (set, get) => ({
+      recentProducts: [],
+      addRecentProduct: (productId) => {
+        let list = get().recentProducts.filter((id) => id !== productId);
+        list.unshift(productId);
+        list = list.slice(0, 10);
+        set({ recentProducts: list });
+      },
+      clearProducts: () => set({ recentProducts: [] }),
+    }),
+    {
+      name: "recentProducts",
+    }
+  )
+);
+
+export { useStore, useRecentProductStore };

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import usestore from "../store/usestore";
+import { useStore } from "../store/useStore.jsx";
 import "../styles/Cart.css";
 
 const Cart = () => {
-  const cart = usestore((state) => state.cart);
-  const removeCart = usestore((state) => state.removeCart);
+  const cart = useStore((state) => state.cart);
+  const removeCart = useStore((state) => state.removeCart);
 
   // 상품별 수량 상태를 객체 형태로 관리 (id: count)
   const [counts, setCounts] = useState(() => {
