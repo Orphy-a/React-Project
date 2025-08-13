@@ -3,6 +3,8 @@
 }
 
 .header {
+  max-width: 1400px;
+  margin: 0 auto;
   min-height: 50px;
   border-bottom: 1px solid #e0e0e0;
   display: flex;

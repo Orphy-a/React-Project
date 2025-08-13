@@ -2,6 +2,7 @@
   display: flex;
   width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .detail-product-img {
@@ -9,6 +10,8 @@
   margin: 50px;
   border: 1px solid rgb(182, 182, 182);
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .detail-product-info {
@@ -16,31 +19,69 @@
   margin: 50px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .detail-product-info > div:nth-child(1) {
-  font-size: 30px;
-  color: #000;
+  font-size: 32px;
+  color: #2c3e50;
   margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .detail-product-info > div:nth-child(2) {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #ecf0f1;
   margin-bottom: 20px;
+  padding-bottom: 15px;
+  color: #7f8c8d;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .detail-product-info > div:nth-child(3) {
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+/* 장바구니 버튼 스타일링 */
+.cart-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  white-space: nowrap;
+}
+
+.cart-button:active {
+  transform: translateY(-1px);
 }
 
 .detail-product-order-btn {
   width: 100%;
-  height: 40px;
-  background-color: beige;
-  border: 1px solid rgb(209, 209, 189);
-  border-radius: 5px;
+  height: 55px;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: auto;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.detail-product-order-btn:active {
+  transform: translateY(-1px);
 }
 
 .alert {
@@ -66,6 +107,7 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .tab-btn.active {
   color: #6c63ff;
   border-bottom: 3px solid #6c63ff;
@@ -98,4 +140,34 @@
 
 .tab-content.fade-in {
   opacity: 1;
+}
+
+.like-section {
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+}
+
+.like-button {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.like-button.liked {
+  background: linear-gradient(135deg, #ff4757, #c44569);
+  animation: heartBeat 0.8s ease-in-out;
 }

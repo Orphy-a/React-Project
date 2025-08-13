@@ -40,6 +40,19 @@ const Details = () => {
     }
   }, [productId, addRecentProduct]);
 
+  const [like, setLike] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+
+  function addLike() {
+    if (!isLiked) {
+      setLike((prev) => prev + 1);
+      setIsLiked(true);
+    } else {
+      setLike((prev) => Math.max(0, prev - 1));
+      setIsLiked(false);
+    }
+  }
+
   return (
     <>
       <div className="detail-product-container">
@@ -48,10 +61,21 @@ const Details = () => {
           <div>{product.title}</div>
           <div>{product.content}</div>
           <div>{product.price.toLocaleString()} 원</div>
-          <button onClick={() => addCart(product)}>장바구니</button>
+
+          <div className="like-section">
+            <div className="like-counter">{like}</div>
+            <button className={`like-button ${isLiked ? "liked" : ""}`} onClick={addLike} title={isLiked ? "좋아요 취소" : "좋아요"}>
+              {isLiked ? "좋아요♥" : "좋아요♡"}
+            </button>
+          </div>
+          <button className="cart-button" onClick={() => addCart(product)}>
+            장바구니 담기
+          </button>
+
           <button className="detail-product-order-btn">주문하기</button>
         </div>
       </div>
+
       <div className="tab-container">
         {tabs.map((tab, idx) => (
           <button key={idx} className={active === idx ? "tab-btn active" : "tab-btn"} onClick={() => setActive(idx)}>
