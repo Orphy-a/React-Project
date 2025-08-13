@@ -1,8 +1,8 @@
-# 🛒 쇼핑몰 웹 애플리케이션
+# 🛒 간단한 쇼핑몰 웹 애플리케이션
 
 React 19(Vite)와 Node.js(Express.js) 기반의 **풀스택 쇼핑몰 웹 애플리케이션**입니다.  
 Zustand로 상태를 관리하며, **장바구니·상품 상세·메인 페이지** 등 쇼핑몰에 필요한 주요 기능을 제공합니다.  
-또한 **PWA 지원, 반응형 디자인**과 **CSS 모듈·Styled Components**를 통해 최신 웹 환경을 구현했습니다.
+또한 **PWA 지원, 반응형 디자인**과 **CSS 모듈·Styled Components**를 통해 최신 웹 환경을 구현해보았습니다.
 
 ---
 
@@ -28,25 +28,28 @@ Zustand로 상태를 관리하며, **장바구니·상품 상세·메인 페이�
 ---
 
 ## 📂 프로젝트 구조
+
+```plaintext
 shopping-mall-app/
-├── node_modules/ # 설치된 패키지
-├── public/ # 정적 파일 (index.html, 로고 등)
-├── src/ # 프론트엔드 소스
-│ ├── components/ # 재사용 React 컴포넌트
-│ ├── pages/ # 페이지 컴포넌트 (메인, 상품상세, 장바구니 등)
-│ ├── store/ # Zustand 상태 관리
-│ ├── hooks/ # 커스텀 Hook
-│ ├── styles/ # CSS 모듈/Styled Components
-│ ├── assets/ # 이미지·아이콘·폰트
-│ └── App.jsx # 루트 컴포넌트
-├── server/ # Node.js+Express 백엔드
-│ ├── routes/ # API 라우터
-│ ├── controllers/ # 비즈니스 로직
-│ └── models/ # DB 모델
+├── node_modules/         # 설치된 패키지
+├── public/               # 정적 파일 (index.html, 로고 등)
+├── src/                  # 프론트엔드 소스
+│   ├── components/       # 재사용 React 컴포넌트
+│   ├── pages/            # 페이지 컴포넌트 (메인, 상품상세, 장바구니 등)
+│   ├── store/            # Zustand 상태 관리
+│   ├── hooks/            # 커스텀 Hook
+│   ├── styles/           # CSS 모듈/Styled Components
+│   ├── assets/           # 이미지·아이콘·폰트
+│   └── App.jsx           # 루트 컴포넌트
+├── server/               # Node.js+Express 백엔드
+│   ├── routes/           # API 라우터
+│   ├── controllers/      # 비즈니스 로직
+│   └── models/           # DB 모델
 ├── package.json
 ├── vite.config.js
 ├── .eslintrc.js
 ├── .env
+```
 
 ---
 
@@ -59,26 +62,31 @@ shopping-mall-app/
 ```bash
 # 프론트엔드
 npm install
-
+```
 # 백엔드
+```
 cd server
 npm install
+```
 3. 개발 모드 실행
 bash
 복사
 편집
 # 프론트엔드 (기본 5173 포트)
+```
 npm run dev
-
+```
 # 백엔드 (기본 8080 포트)
+```
 cd server
 npm run start
 4. 프로덕션 빌드
-bash
-복사
-편집
+
+```
 # 프론트엔드 빌드
+```
 npm run build
+```
 백엔드: Express 서버 배포 환경에 맞게 실행
 
 🌐 접속 정보
